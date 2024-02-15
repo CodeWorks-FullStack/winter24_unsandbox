@@ -1,6 +1,6 @@
 export class UnsandboxImage {
   constructor (data) {
-    this.orginalId = data.id
+    this.id = data.id
     this.date = data.date == undefined ? new Date(data.created_at) : new Date(data.date)
     this.description = data.description || data.alt_description || ''
     this.imgUrl = data.imgUrl || data.urls.full
@@ -21,6 +21,17 @@ export class UnsandboxImage {
         <h3>${this.description}</h3>
         <button onclick="app.SandboxImagesController.createImage()" class="btn btn-outline-light px-3">Save</button>
       </div>
+    </div>
+    `
+  }
+
+  get ListHTMLTemplate() {
+    return `
+    <div onclick="app.SandboxImagesController.setActiveImage('${this.id}')" class="col-12 mb-3">
+      <img class="img-fluid selectable" role="button"
+        src="${this.imgUrl}"
+        alt="">
+      <button onclick="app.SandboxImagesController.removeImage('')" class="btn btn-danger mt-2">Delete Image</button>
     </div>
     `
   }
