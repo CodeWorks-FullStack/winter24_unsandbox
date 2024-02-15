@@ -19,6 +19,7 @@ export class UnsandboxImage {
         </a>
         </h2>
         <h3>${this.description}</h3>
+        <button class="btn btn-outline-light px-3">Save</button>
       </div>
     </div>
     `

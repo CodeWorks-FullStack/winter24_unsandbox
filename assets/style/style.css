@@ -24,6 +24,12 @@ main {
   transition: all 1s ease-in-out;
 }
 
+.hidden-details:hover {
+  opacity: 1;
+
+}
+
+
 .magic-date:hover+.hidden-details {
   opacity: 1;
 }
