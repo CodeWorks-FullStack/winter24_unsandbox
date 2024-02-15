@@ -39,4 +39,20 @@ export class SandboxImagesController {
   setActiveImage(imageId) {
     sandboxImagesService.setActiveImage(imageId)
   }
+
+  async removeImage(imageId) {
+    try {
+      const wantsToDelete = await Pop.confirm('Are you sure you want to remove this image?')
+
+      if (!wantsToDelete) {
+        return
+      }
+
+      await sandboxImagesService.removeImage(imageId)
+
+    } catch (error) {
+      console.error(error);
+      Pop.error(error)
+    }
+  }
 }

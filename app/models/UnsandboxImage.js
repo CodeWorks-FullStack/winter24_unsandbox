@@ -27,11 +27,11 @@ export class UnsandboxImage {
 
   get ListHTMLTemplate() {
     return `
-    <div onclick="app.SandboxImagesController.setActiveImage('${this.id}')" class="col-12 mb-3">
-      <img class="img-fluid selectable" role="button"
+    <div  class="col-12 mb-5">
+      <img onclick="app.SandboxImagesController.setActiveImage('${this.id}')" class="img-fluid selectable" role="button"
         src="${this.imgUrl}"
         alt="">
-      <button onclick="app.SandboxImagesController.removeImage('')" class="btn btn-danger mt-2">Delete Image</button>
+      <button onclick="app.SandboxImagesController.removeImage('${this.id}')" class="btn btn-danger mt-2">Delete Image</button>
     </div>
     `
   }
