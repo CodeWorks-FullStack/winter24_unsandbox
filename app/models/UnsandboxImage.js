@@ -1,10 +1,10 @@
 export class UnsandboxImage {
   constructor (data) {
     this.orginalId = data.id
-    this.date = new Date(data.created_at)
+    this.date = data.date == undefined ? new Date(data.created_at) : new Date(data.date)
     this.description = data.description || data.alt_description || ''
-    this.imgUrl = data.urls.full
-    this.author = data.user
+    this.imgUrl = data.imgUrl || data.urls.full
+    this.author = data.user || data.author
   }
 
   get InfoCardHTMLTemplate() {

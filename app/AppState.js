@@ -13,6 +13,11 @@ class ObservableAppState extends EventEmitter {
    */
   // NOTE this will not be an array of data coming, so we do not set up an array placeholder.
   unsandboxImage = null
+
+  /**
+   * @type {UnsandboxImage[]}
+   */
+  myImages = []
 }
 
 export const AppState = createObservableProxy(new ObservableAppState())

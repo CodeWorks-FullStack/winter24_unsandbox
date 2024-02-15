@@ -1,4 +1,5 @@
 import { AppState } from "../AppState.js";
+import { UnsandboxImage } from "../models/UnsandboxImage.js";
 import { api } from "./AxiosService.js"
 
 class SandboxImagesService {
@@ -12,7 +13,9 @@ class SandboxImagesService {
   async getMyImages() {
     const response = await api.get('api/apods')
     console.log('📡 Got my pictures', response.data);
-
+    const newImages = response.data.map(imagePOJO => new UnsandboxImage(imagePOJO))
+    AppState.myImages = newImages
+    console.log(AppState.myImages);
   }
 }
 
