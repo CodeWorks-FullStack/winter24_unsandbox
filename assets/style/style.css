@@ -1,4 +1,20 @@
 /* BASIC STYLES HERE */
 body {
-  background-image: url();
+  background-size: cover;
+  background-position: center;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-card {
+  color: white;
+  text-shadow: 1px 1px 3px black;
+  font-weight: bold;
+  padding: .6em 1em;
+  background-color: rgba(25, 25, 25, 0.203);
+  border-radius: 16px;
 }
