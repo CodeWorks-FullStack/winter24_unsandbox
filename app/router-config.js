@@ -1,4 +1,5 @@
 import { AccountController } from "./controllers/AccountController.js";
+import { UnsandboxImagesController } from "./controllers/UnsandboxImagesController.js";
 import { AuthGuard } from "./services/AuthService.js";
 import { Router } from "./utils/Router.js";
 
@@ -6,7 +7,7 @@ import { Router } from "./utils/Router.js";
 export const router = new Router([
   {
     path: '',
-    controllers: [],
+    controllers: [UnsandboxImagesController],
     view: 'app/views/HomeView.html'
   },
   {

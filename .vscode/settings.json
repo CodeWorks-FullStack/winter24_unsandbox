@@ -23,4 +23,7 @@
     "statusBar.debuggingForeground": "#e7e7e7"
   },
   "peacock.color": "#931330",
+  "cSpell.words": [
+    "Unsandbox"
+  ],
 }

@@ -11,7 +11,7 @@ export const api = axios.create({
 
 // @ts-ignore
 export const unsandboxAPI = axios.create({
-  baseURL: 'https://unsandbox.herokuapp.com/',
+  baseURL: 'https://unsandbox.herokuapp.com',
   timeout: 4500
 })
 
