@@ -2,9 +2,24 @@ export class UnsandboxImage {
   constructor (data) {
     this.orginalId = data.id
     this.createdAt = new Date(data.created_at)
-    this.description = data.description
+    this.description = data.description || data.alt_description || ''
     this.imgUrl = data.urls.full
     this.author = data.user
+  }
+
+  get InfoCardHTMLTemplate() {
+    return `
+    <div class="info-card">
+      <h1>${this.description}</h1>
+      <h2>${this.createdAt.toLocaleDateString()}</h2>
+      <h3>
+        <span>By ${this.author.name}</span>
+        <a title="Go see ${this.author.first_name}'s profile on unsplash" href="${this.author.links.html}" target="_blank">
+          <i class="mdi mdi-account-circle text-light"></i>
+        </a>
+      </h3>
+    </div>
+    `
   }
 }
 
