@@ -10,14 +10,16 @@ export class UnsandboxImage {
   get InfoCardHTMLTemplate() {
     return `
     <div class="info-card">
-      <h1>${this.description}</h1>
-      <h2>${this.createdAt.toLocaleDateString()}</h2>
-      <h3>
+      <h1 class="text-center magic-date">${this.createdAt.toLocaleDateString()}</h1>
+      <div class="hidden-details">
+        <h2>
         <span>By ${this.author.name}</span>
         <a title="Go see ${this.author.first_name}'s profile on unsplash" href="${this.author.links.html}" target="_blank">
-          <i class="mdi mdi-account-circle text-light"></i>
+        <i class="mdi mdi-account-circle text-light"></i>
         </a>
-      </h3>
+        </h2>
+        <h3>${this.description}</h3>
+      </div>
     </div>
     `
   }
