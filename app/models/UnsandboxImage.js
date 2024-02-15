@@ -1,7 +1,7 @@
 export class UnsandboxImage {
   constructor (data) {
     this.orginalId = data.id
-    this.createdAt = new Date(data.created_at)
+    this.date = new Date(data.created_at)
     this.description = data.description || data.alt_description || ''
     this.imgUrl = data.urls.full
     this.author = data.user
@@ -10,7 +10,7 @@ export class UnsandboxImage {
   get InfoCardHTMLTemplate() {
     return `
     <div class="info-card">
-      <h1 class="text-center magic-date">${this.createdAt.toLocaleDateString()}</h1>
+      <h1 class="text-center magic-date">${this.date.toLocaleDateString()}</h1>
       <div class="hidden-details">
         <h2>
         <span>By ${this.author.name}</span>
