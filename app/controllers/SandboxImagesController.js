@@ -13,14 +13,16 @@ function _drawMyImages() {
 
 export class SandboxImagesController {
   constructor () {
+    console.log('sandbox controller loaded');
+    // NOTE only after we log in
     AppState.on('account', this.getMyImages)
     AppState.on('myImages', _drawMyImages)
-    console.log('sandbox controller loaded');
   }
 
   async createImage() {
     try {
       await sandboxImagesService.createImage()
+      Pop.success(`${AppState.unsandboxImage.description} saved!`)
     } catch (error) {
       console.error(error);
       Pop.error(error)

@@ -1,4 +1,5 @@
 /* BASIC STYLES HERE */
+/* NOTE background-image is assigned by controller, but we want these styles to apply to it */
 body {
   background-size: cover;
   background-position: center;
@@ -24,12 +25,17 @@ main {
   transition: all 1s ease-in-out;
 }
 
+/* 
 .hidden-details:hover {
   opacity: 1;
+} */
 
-}
+/* NOTE + selector is sibling selector, opacity goes back to 1 after leaving the date element */
+/* .magic-date:hover+.hidden-details {
+  opacity: 1;
+} */
 
-
-.magic-date:hover+.hidden-details {
+/* NOTE child selector. Only works because hidden-details class is a child of info-card */
+.info-card:hover .hidden-details {
   opacity: 1;
 }
