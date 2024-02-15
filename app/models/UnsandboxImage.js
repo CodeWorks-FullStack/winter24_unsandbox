@@ -1,14 +1,12 @@
 export class UnsandboxImage {
   constructor (data) {
-    this.id = data.id
+    this.orginalId = data.id
     this.createdAt = new Date(data.created_at)
     this.updatedAt = new Date(data.updated_at)
     this.description = data.description
-    this.altDescription = data.alt_description
     this.color = data.color
-    this.largeImgUrl = data.urls.raw
-    this.imgUrl = data.urls.regular
-    this.url = data.links.html
+    this.imgUrl = data.urls.full
+    this.author = data.user
   }
 }
 
