@@ -3,6 +3,7 @@ import { logger } from '../utils/Logger.js';
 
 // @ts-ignore
 // eslint-disable-next-line no-undef
+// NOTE BCW sandbox api
 export const api = axios.create({
   baseURL: baseURL,
   timeout: 8000,
@@ -10,6 +11,7 @@ export const api = axios.create({
 })
 
 // @ts-ignore
+// NOTE mick's unsplash api
 export const unsandboxAPI = axios.create({
   baseURL: 'https://unsandbox.herokuapp.com',
   timeout: 9000
