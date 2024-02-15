@@ -11,6 +11,7 @@ class ObservableAppState extends EventEmitter {
   /**
    * @type {UnsandboxImage | null}
    */
+  // NOTE this will not be an array of data coming, so we do not set up an array placeholder.
   unsandboxImage = null
 }
 
